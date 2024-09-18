@@ -1,0 +1,33 @@
+﻿@model SignUpViewModel
+
+@{
+
+    ViewData["Title"] = "Login";
+	Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<h1>Login</h1>
+<form asp-action="Login" method="post">
+    <div asp-validation-summary="All"></div>
+    <input type="text" asp-for="Email" placeholder="Email" class="from-control" />
+    <span asp-validation-for="Email"></span>
+    <br />
+    <input type="text" asp-for="Password" placeholder="Password" class="from-control" />
+    <span asp-validation-for="Password"></span>
+    <br />
+
+
+    <div class="wthree-text">
+        <label class="anim">
+            <input asp-action="RememberMe" class="checkbox" required="" />
+            <span>Keep Me Signed In</span>
+
+        </label>
+        <div class="clear">
+        </div>
+        <input type="submit" value="SIGNUP" />
+    </div>
+</form>
+<p> Do You Have An Acoount? <a asp-action="SignUp">SignUp Now !</a> </p>
+<br />
+<p><a asp-action="ForgetPassword">Forget Password !</a></p>
